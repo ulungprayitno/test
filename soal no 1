@@ -1,0 +1,18 @@
+const solutions = (arr) => {
+  const checkduplicate = arr.some((item, idx) => arr.indexOf(item) !== idx)
+  console.log(checkduplicate)
+  if (checkduplicate) {
+    let res = new Set()
+    let count = 1;
+     arr.map(a => {
+       if (res.has(a)) {
+         count++
+       }
+       else res.add(a)
+     })
+  } else {
+    console.log("no duplicate data")
+  }
+}
+
+solutions(["A", "B", "K", "D", "C", "B", "K"])
